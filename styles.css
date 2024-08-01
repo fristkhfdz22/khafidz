@@ -1,0 +1,214 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Teks berwarna putih */
+    scroll-behavior: smooth; /* Efek scroll halus */
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    background: #000; /* Background hitam */
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #000; /* Background hitam */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #ff0; /* Logo berwarna kuning */
+    font-size: 1.5em;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Pastikan di atas menu */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ff0; /* Bar hamburger berwarna kuning */
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+/* Rotate bars to form X when checked */
+.nav-toggle:checked + .hamburger .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.nav-toggle:checked + .hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle:checked + .hamburger .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background: #000; /* Background hitam */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+    z-index: 1000;
+}
+
+/* Show the navigation menu when the checkbox is checked */
+.nav-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+    transform: translateX(0);
+}
+
+.nav-links a {
+    color: #ff0; /* Link berwarna kuning */
+    padding: 15px 0;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, transform 0.3s, border-bottom 0.3s;
+    font-size: 1.5em;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.nav-toggle:checked + .hamburger + .nav-links a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.nav-links a:hover {
+    color: #ff0; /* Teks hover berwarna kuning */
+    border-bottom: 2px solid #ff0; /* Garis bawah berwarna kuning saat hover */
+    transform: scale(1.05); /* Sedikit perbesar saat hover */
+}
+
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0; /* Teks parallax berwarna kuning */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.parallax1 {
+    background-image: url('assets/img-09.jpg');
+}
+
+.parallax2 {
+    background-image: url('assets/img-14.jpg');
+}
+
+.parallax3 {
+    background-image: url('assets/img-85.jpg');
+}
+
+.content {
+    padding: 50px 20px;
+    text-align: center;
+    background: #000; /* Background hitam */
+    color: #ff0; /* Teks berwarna kuning */
+    position: relative;
+    top: 70px; /* Tambahkan padding atas agar konten tidak tersembunyi di bawah navbar */
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+        height: auto;
+        transform: none;
+    }
+
+    .nav-links a {
+        padding: 0 15px;
+        transform: none;
+        opacity: 1;
+        font-size: 1em;
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #333; /* Background formulir */
+    border-radius: 8px;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #222; /* Background input dan textarea */
+    color: #fff; /* Teks input dan textarea */
+    font-size: 1em;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #888; /* Placeholder color */
+}
+
+form button {
+    padding: 10px;
+    background-color: #ff0; /* Button background berwarna kuning */
+    border: none;
+    border-radius: 4px;
+    color: #000; /* Teks button berwarna hitam */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e0e0e0; /* Warna button saat hover */
+}
