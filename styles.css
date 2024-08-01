@@ -21,9 +21,10 @@ body, html {
     padding: 15px 20px;
     background: #000; /* Background hitam */
     position: fixed;
-    width: 100%;
+    width: 95%;
     top: 0;
     left: 0;
+
     z-index: 1000;
 }
 
