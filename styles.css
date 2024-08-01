@@ -212,3 +212,35 @@ form button {
 form button:hover {
     background-color: #e0e0e0; /* Warna button saat hover */
 }
+.footer {
+    background-color: #111;
+    padding: 5em 0;
+    text-align: center;
+}
+.project-grid {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+.project-info {
+    padding: 1em;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
