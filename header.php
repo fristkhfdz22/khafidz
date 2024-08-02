@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>leveling up</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/logo.png" type="root">
 </head>
 <body>
     <header>
